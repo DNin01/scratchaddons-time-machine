@@ -1,0 +1,18 @@
+{
+  "name": "Scratch Addons Time Machine",
+  "description": "Roll back the clock and see how Scratch Addons has changed.",
+  "version": "0.0.1",
+  "icons": {
+    "256": "images/time-machine/icon.png"
+  },
+
+  "manifest_version": 3,
+  "permissions": [
+    "storage"
+  ],
+
+  "options_ui": {
+    "page": "ui/settings-pages.html",
+    "open_in_tab": true
+  }
+}

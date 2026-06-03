@@ -1,0 +1,12 @@
+{
+  "name": "Forums image uploader",
+  "description": "Integrates image uploading into the forums.",
+  "credits": [
+    {
+      "name": "Jeffalo"
+    }
+  ],
+  "tags": ["forums", "community"],
+  "enabledByDefault": false,
+  "libraries": ["md5", "text-field-edit"]
+}

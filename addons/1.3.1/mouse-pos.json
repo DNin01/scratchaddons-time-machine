@@ -1,0 +1,11 @@
+{
+  "name": "Mouse position",
+  "description": "Displays your mouse position next to the flag in the editor.",
+  "credits": [
+    {
+      "name": "Jeffalo"
+    }
+  ],
+  "tags": ["editor"],
+  "enabledByDefault": false
+}

@@ -1,0 +1,96 @@
+[
+  {
+    "version": "1.0.0",
+    "added": [
+      "editor-searchable-dropdowns",
+      "editor-devtools",
+      "editor-dark-mode",
+      "editor-colored-context-menus",
+      "msg-count-badge",
+      "scratch-notifier",
+      "discuss-button",
+      "editor-stepping",
+      "image-uploader",
+      "scratch-messaging",
+      "forum-time-zones",
+      "fix-buttons",
+      "remove-sprite-confirm",
+      "true-youtube-links",
+      "progress-bar",
+      "bitmap-copy",
+      "more-links",
+      "youtube-fullscreen",
+      "data-category-tweaks",
+      "full-signature"
+    ]
+  },
+  {
+    "version": "1.1.1",
+    "added": [
+      "60fps",
+      "better-emojis",
+      "cloud-games",
+      "editor-stage-left",
+      "forum-search",
+      "scratchr2",
+      "search-profile"
+    ],
+    "modified": [
+      "bitmap-copy",
+      "data-category-tweaks",
+      "full-signature",
+      "remove-sprite-confirm"
+    ]
+  },
+  {
+    "version": "1.2.1",
+    "added": [
+      "clones",
+      "editor-theme3",
+      "exact-count",
+      "infinite-scroll",
+      "last-edit-tooltip",
+      "mouse-pos",
+      "remix-tree-button",
+      "studio-tools"
+    ],
+    "modified": [
+      "60fps",
+      "bitmap-copy",
+      "cloud-games",
+      "editor-dark-mode",
+      "editor-stage-left",
+      "full-signature"
+    ],
+    "removed": [
+      "data-category-tweaks",
+      "fix-buttons"
+    ]
+  },
+  {
+    "version": "1.3.1",
+    "added": [
+      "animated-thumb",
+      "live-featured-project",
+      "pause",
+      "resizable-comment-input"
+    ],
+    "modified": [
+      "60fps",
+      "clones",
+      "editor-colored-context-menus",
+      "editor-stage-left",
+      "editor-stepping",
+      "editor-theme3",
+      "exact-count",
+      "forum-time-zones",
+      "full-signature",
+      "image-uploader",
+      "infinite-scroll",
+      "mouse-pos",
+      "remove-sprite-confirm",
+      "scratch-notifier",
+      "studio-tools"
+    ]
+  }
+]

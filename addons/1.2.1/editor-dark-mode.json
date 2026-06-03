@@ -1,0 +1,29 @@
+{
+  "name": "Editor dark mode",
+  "description": "Dark mode for the Scratch 3.0 project editor. Multiple options by different authors available.",
+  "credits": [
+    {
+      "name": "infinitytec (3.Dark, 3.Darker)"
+    },
+    {
+      "name": "_nix (Dark editor)"
+    }
+  ],
+  "settings": [
+    {
+      "name": "Dark mode version",
+      "id": "selectedMode",
+      "type": "select",
+      "potentialValues": ["3.Darker", "3.Dark", "Dark editor"],
+      "default": "3.Darker"
+    },
+    {
+      "name": "Text shadow on blocks",
+      "id": "textShadow",
+      "type": "boolean",
+      "default": false
+    }
+  ],
+  "tags": ["editor", "theme"],
+  "enabledByDefault": false
+}

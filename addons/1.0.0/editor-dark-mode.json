@@ -1,0 +1,23 @@
+{
+  "name": "Editor dark mode",
+  "description": "Dark mode for the Scratch 3.0 project editor. Multiple options by different authors available.",
+  "credits": [
+    {
+      "name": "_nix (Dark editor)"
+    },
+    {
+      "name": "infinitytec (3.Dark, 3.Darker)"
+    }
+  ],
+  "options": [
+    {
+      "name": "Dark mode version",
+      "id": "selectedMode",
+      "type": "select",
+      "potential_values": ["Dark editor", "3.Dark", "3.Darker"],
+      "default": "Dark editor"
+    }
+  ],
+  "tags": ["editor", "theme"],
+  "enabled_by_default": false
+}

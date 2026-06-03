@@ -1,0 +1,11 @@
+{
+  "name": "True forums YouTube links",
+  "description": "Replaces links to the embedded site with real YouTube links.",
+  "credits": [
+    {
+      "name": "HTML-Fan/NT"
+    }
+  ],
+  "tags": ["community", "forums"],
+  "enabled_by_default": false
+}

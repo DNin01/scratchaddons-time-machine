@@ -1,0 +1,6 @@
+{
+  "name": "Confirm sprite deletion",
+  "description": "Asks if you're sure when deleting a sprite inside a project.",
+  "tags": ["editor"],
+  "enabled_by_default": false
+}
