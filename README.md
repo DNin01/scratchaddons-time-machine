@@ -10,3 +10,7 @@
 
 ![An image showing the settings page on version 1.3.1 in Scratch Addons Time Machine](images/screenshots/settings.jpeg)
 <i align="center">An image showing the settings page on version 1.3.1 in Scratch Addons Time Machine</i>
+
+# Licenses
+
+Scratch Addons Time Machine is available under [GNU General Public License v3](LICENSE) terms. Licenses for included software libraries can be found in the [`/licenses` directory](licenses/).

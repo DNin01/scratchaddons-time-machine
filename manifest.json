@@ -8,9 +8,13 @@
 
   "manifest_version": 3,
   "permissions": [
+    "contextMenus",
     "storage"
   ],
 
+  "background": {
+    "service_worker": "background.js"
+  },
   "options_ui": {
     "page": "ui/settings-pages.html",
     "open_in_tab": true
