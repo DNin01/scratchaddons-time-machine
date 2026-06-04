@@ -10,6 +10,9 @@ const pageVersion = location.pathname.match(/\d+.\d+.\d+/);
 chrome.runtime.getVersion = () => pageVersion;
 chrome.runtime.getManifest = () => ({ version: pageVersion, version_name: pageVersion });
 
+// Open the settings page in the Time Machine container
+chrome.runtime.openOptionsPage = () => chrome.tabs.create({ url: "ui/settings-pages.html" });
+
 // We don't want one of the pages to reload the whole extension.
 chrome.runtime.reload = () => location.reload();
 
