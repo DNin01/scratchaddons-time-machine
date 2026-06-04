@@ -5,8 +5,10 @@
 // Delete it if Firefox isn't detected so that pages can tell if it's Chrome.
 if (browser && typeof new Error().fileName === "undefined") delete browser;
 
+const pageVersion = location.pathname.match(/\d+.\d+.\d+/);
 // Return the version of the webpage, not of Time Machine
-chrome.runtime.getVersion = () => location.pathname.match(/\d+.\d+.\d+/);
+chrome.runtime.getVersion = () => pageVersion;
+chrome.runtime.getManifest = () => ({ version: pageVersion, version_name: pageVersion });
 
 // We don't want one of the pages to reload the whole extension.
 chrome.runtime.reload = () => location.reload();

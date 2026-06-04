@@ -12,6 +12,9 @@
     "storage"
   ],
 
+  "action": {
+    "default_popup": "ui/popup-pages.html"
+  },
   "background": {
     "service_worker": "background.js"
   },

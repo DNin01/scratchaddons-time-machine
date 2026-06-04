@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="/libraries/thirdparty/Sora.css" rel="stylesheet" />
+    <script src="/libraries/time-machine/page-wrapper.js" defer></script>
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="title">
+        <img src="/images/scratch-addons/icon.svg" id="logo" alt="Logo" />
+        <span id="title-text">Scratch Addons</span>
+      </div>
+      <div id="settings" title="Settings"><img src="./settings.svg" /></div>
+    </div>
+    <div id="popups">
+      <div id="popup-chooser">
+        <div id="popup-title">
+          Scratch Messaging&nbsp;
+          <a id="popout" href="../scratch-messaging/popup.html" target="_blank">
+            <img src="./popout.png" title="Open in new tab" />
+          </a>
+        </div>
+      </div>
+      <iframe src="../scratch-messaging/popup.html"></iframe>
+    </div>
+  </body>
+</html>

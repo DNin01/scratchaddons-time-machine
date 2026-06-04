@@ -1,0 +1,110 @@
+html {
+  width: 400px;
+}
+
+body {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  color: white;
+}
+
+#header {
+  background-color: #ff7b26;
+  display: flex;
+  height: 60px;
+}
+#title-text,
+#settings {
+  font-size: 18px;
+  font-weight: 400;
+}
+#title {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+#fullscreen {
+  display: none;
+}
+.popup-name img {
+  height: 0.6rem;
+  vertical-align: middle;
+  opacity: 0.6;
+  padding-left: 5px;
+  filter: invert(1);
+}
+#logo {
+  height: 30px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+#settings {
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#settings > img {
+  height: 24px;
+}
+
+#popups {
+  background-color: #222;
+}
+
+#popup-bar {
+  background-color: #2a2a2a;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+#popup-chooser {
+  display: flex;
+  color: #fff;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 35px;
+  overflow: hidden;
+}
+.popup-name {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 12px 12px 0 0;
+}
+.popup-name:not(:last-child) {
+  border-right: none;
+}
+.popup-name.sel {
+  background-color: #ff7b26;
+}
+#other-popups a {
+  cursor: pointer;
+}
+
+iframe {
+  width: 400px;
+  height: 468px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: none;
+  overflow-y: scroll;
+  background-color: #222;
+}
+#version {
+  color: white;
+  margin: 5px;
+  vertical-align: middle;
+  text-decoration: none;
+  opacity: 0.75;
+  font-size: 0.7rem;
+}

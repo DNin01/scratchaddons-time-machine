@@ -1,0 +1,35 @@
+const selectElem = document.querySelector("select");
+const iframeElem = document.querySelector("iframe");
+
+let selectedVersion = localStorage.getItem("v") ?? selectElem.lastElementChild.value;
+selectElem.value = selectedVersion;
+let addonData;
+
+async function loadPopupPage() {
+  console.log(`Loading popup v${selectedVersion}...`);
+  iframeElem.contentWindow.location = `/pages/${selectedVersion}/popup/index.html`;
+
+  // Replace 'v*.*.*' (inside the parentheses) in the document title
+  document.title = document.title.replace(/(?<=\().*(?=\))/, selectedVersion);
+
+  return true;
+}
+
+selectElem.addEventListener("change", async (e) => {
+  console.clear();
+  selectedVersion = e.target.value;
+  localStorage.setItem("v", selectedVersion);
+
+  selectElem.disabled = true;
+  await loadPopupPage();
+  setTimeout(() => selectElem.disabled = false, 500);
+});
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  switch (request) {
+    default: console.error(new URL(sender.tab.url).pathname + " sent an unrecognized request:", request);
+  }
+});
+
+await loadPopupPage();
+selectElem.disabled = false;
