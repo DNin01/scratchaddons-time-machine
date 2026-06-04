@@ -3,7 +3,7 @@ import getDataForVersion from "./services/get-addons.js";
 const selectElem = document.querySelector("select");
 const iframeElem = document.querySelector("iframe");
 
-let selectedVersion = localStorage.getItem("v") ?? selectElem.lastElementChild.value;
+let selectedVersion = localStorage.getItem("v") ?? selectElem.firstElementChild.value;
 selectElem.value = selectedVersion;
 let addonData;
 
@@ -35,7 +35,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     case "getSettingsInfo":
       sendResponse(addonData);
     break;
-    default: console.error(new URL(sender.tab.url).pathname + " sent an unrecognized request:", request);
+    default: console.error(new URL(sender.url).pathname + " sent an unrecognized request:", request);
   }
 });
 
