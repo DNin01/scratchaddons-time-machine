@@ -9,9 +9,6 @@ async function loadPopupPage() {
   console.log(`Loading popup v${selectedVersion}...`);
   iframeElem.contentWindow.location = `/pages/${selectedVersion}/popup/index.html`;
 
-  // Replace 'v*.*.*' (inside the parentheses) in the document title
-  document.title = document.title.replace(/(?<=\().*(?=\))/, selectedVersion);
-
   return true;
 }
 

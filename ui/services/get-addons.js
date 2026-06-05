@@ -1,7 +1,7 @@
 // First of all, get the change list
 const changesFile = await (await fetch("/addons/changes.json")).json();
 
-export async function getAddonsForVersion(version) {
+async function getAddonsForVersion(version) {
   // Filter to only changes since the requested version
   const currentVersionIndex = changesFile.findIndex((list) => list.version === version);
   const pastChanges = changesFile.slice(0, currentVersionIndex + 1);
