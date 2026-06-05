@@ -1,0 +1,13 @@
+{
+  "name": "Feature unshared projects",
+  "description": "Allows you to choose unshared projects after clicking \"change featured project\" in your profile.",
+  "credits": [
+    {
+      "name": "TheColaber",
+      "link": "https://scratch.mit.edu/users/TheColaber"
+    }
+  ],
+  "tags": ["community"],
+  "enabledByDefault": false,
+  "l10n": true
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Resizable comment input",
+  "description": "Makes the comment input box vertically resizable in Scratch 3.0-styled pages.",
+  "tags": ["community", "recommended", "theme"],
+  "credits": [
+    {
+      "name": "Maximouse"
+    }
+  ],
+  "enabledByDefault": true,
+  "l10n": true
+}

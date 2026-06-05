@@ -92,5 +92,31 @@
       "scratch-notifier",
       "studio-tools"
     ]
+  },
+  {
+    "version": "1.4.0",
+    "added": [
+      "block-switching",
+      "confirm-actions",
+      "curator-link",
+      "dark-www",
+      "editor-messages",
+      "feature-unshared",
+      "fix-uploaded-svgs",
+      "forum-quote-code-beautifier",
+      "my-ocular",
+      "project-info",
+      "project-notes-tabs",
+      "search-load-more-fix"
+    ],
+    "modified": [
+      "editor-dark-mode",
+      "forum-search",
+      "live-featured-project",
+      "more-links",
+      "resizable-comment-input",
+      "scratch-notifier",
+      "search-profile"
+    ]
   }
 ]

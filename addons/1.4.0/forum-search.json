@@ -1,0 +1,16 @@
+{
+  "name": "Forum Search",
+  "description": "Adds a post search to the forum homepage. Uses ScratchDB for information.",
+  "credits": [
+    {
+      "name": "DatOneLefty"
+    },
+    {
+      "name": "Hans5958"
+    }
+  ],
+  "tags": ["forums", "community"],
+  "enabledByDefault": false,
+  "libraries": ["scratchblocks"],
+  "l10n": true
+}
