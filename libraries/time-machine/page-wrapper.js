@@ -1,3 +1,5 @@
+import getMessages from "/pages/message-data.js";
+
 // Since each SA page is in an unfamiliar extension, APIs are a little different for them.
 // This module overrides some of them for compatibility.
 
@@ -22,3 +24,9 @@ chrome.runtime.reload = () => location.reload();
 // Always assume "permissions" will be granted.
 // They aren't actually necessary because the addons aren't functional in Time Machine.
 chrome.permissions.request = (options, callback) => callback(true);
+
+const messages = getMessages(pageVersion);
+chrome.i18n.getMessage = (id, ...args) => {
+  const message = messages[id];
+  return message.replace("$1", args[0]);
+}
