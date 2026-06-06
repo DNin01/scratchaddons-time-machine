@@ -55,7 +55,7 @@ for (const popup of popups) {
     a.textContent += "\u00a0";
     const popoutA = document.createElement("a");
     popoutA.className = "popout";
-    popoutA.href = `../../popups/${popup.url}`;
+    popoutA.href = `../${popup.url}`;
     popoutA.target = "_blank";
     popoutA.onclick = () => setTimeout(() => window.close(), 100);
     const img = document.createElement("img");
