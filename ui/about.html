@@ -8,31 +8,31 @@
   <body>
     <span>Scratch Addons Time Machine uses the following open source software:</span>
     <ul>
-      <li aria-label="Scratch Addons">
+      <li aria-label="Scratch Addons" id="scratch-addons">
         <span>Scratch Addons</span>
         <a href="/licenses/scratch-addons.txt" style="font-weight: 600;">License (GPL)</a>
         <a href="https://scratchaddons.com">Website</a>
         <a href="https://github.com/ScratchAddons/ScratchAddons">Source code</a>
       </li>
       <ul>
-        <li aria-label="Vue">
+        <li aria-label="Vue" id="vue">
           <span>Vue</span>
           <a href="/licenses/vue.txt" style="font-weight: 600;">License (MIT)</a>
           <a href="https://v1.vuejs.org">Website</a>
           <a href="https://github.com/vuejs/vue">Source code</a>
         </li>
-        <li aria-label="Sora">
+        <li aria-label="Sora" id="sora">
           <span>Sora</span>
           <a href="/licenses/sora.txt" style="font-weight: 600;">License (OFL)</a>
           <a href="https://github.com/sora-xor/sora-font">Source code</a>
         </li>
-        <li aria-label="Unicons">
+        <li aria-label="Unicons" id="unicons">
           <span>Unicons</span>
           <a href="https://github.com/Iconscout/unicons/blob/v2.0.0/LICENSE" style="font-weight: 600;">License (Apache)</a>
           <a href="https://iconscout.com/unicons">Website</a>
           <a href="https://github.com/Iconscout/unicons">Source code</a>
         </li>
-        <li aria-label="Bootstrap Icons">
+        <li aria-label="Bootstrap Icons" id="bootstrap-icons">
           <span>Bootstrap Icons</span>
           <a href="https://github.com/twbs/icons/blob/main/LICENSE" style="font-weight: 600;">License (MIT)</a>
           <a href="https://icons.getbootstrap.com">Website</a>
@@ -92,5 +92,31 @@
           flex-grow: 1;
           font-weight: 600;
         }
+
+      li:hover, li:focus-within {
+        border-color: #8889;
+      }
+
+      li:target, li:target ~ ul li {
+        background: #58f1;
+        border-color: #58c;
+        animation: highlight 1s ease-in-out;
+      }
+
+      @keyframes highlight {
+        0% {
+          border-color: transparent;
+          outline: solid 2px transparent;
+          outline-offset: 15px;
+        }
+        50% {
+          border-color: transparent;
+          outline: solid 2px #58c;
+          outline-offset: -2px;
+        }
+        100% {
+          outline-color: transparent;
+        }
+      }
   </style>
 </html>
