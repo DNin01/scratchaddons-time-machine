@@ -1,4 +1,4 @@
-import WebsiteLocalizationProvider from "/libraries/scratch-addons/website-l10n.js";
+import WebsiteLocalizationProvider from "/libraries/time-machine/page-l10n.js";
 
 (async () => {
   const l10n = new WebsiteLocalizationProvider();

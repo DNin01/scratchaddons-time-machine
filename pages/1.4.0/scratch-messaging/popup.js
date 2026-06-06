@@ -1,4 +1,4 @@
-import WebsiteLocalizationProvider from "/libraries/scratch-addons/website-l10n.js";
+import WebsiteLocalizationProvider from "/libraries/time-machine/page-l10n.js";
 import { escapeHTML } from "/libraries/scratch-addons/autoescaper.js";
 
 (async () => {
