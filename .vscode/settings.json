@@ -7,12 +7,22 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
 
-  // SVG files
+  "files.associations": {
+    "manifest.json": "jsonc"
+  },
+
+  // For SVGs
   "[xml]": {
     "files.insertFinalNewline": false
   },
 
   "[json]": {
     "editor.wordWrap": "on"
-  }
+  },
+  "json.schemas": [
+    {
+      "fileMatch": ["/manifest.json"],
+      "url": "https://json.schemastore.org/chrome-manifest.json"
+    }
+  ]
 }

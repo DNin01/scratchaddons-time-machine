@@ -20,6 +20,7 @@ Time Machine includes the following versions of Scratch Addons:
 - 1.1.1
 - 1.2.1
 - 1.3.1
+- 1.4.0
 
 ## Usage
 
@@ -47,11 +48,11 @@ Here's where some of these processes are located:
 
 ### Adding versions
 
-The general steps to add a version of Scratch Addons' webpages and addon collection to Time Machine are as follows:
+The general steps to add a version of Scratch Addons' webpages and addon collection to Time Machine using [Git](https://git-scm.com) and a code editor are as follows:
 
-#### 0. Ensure that the latest version added to Time Machine has a complete list of changes, as you'll have to use them during comparison.
+#### 0. Ensure that the latest version added to Time Machine has a complete list of changes.
 
-In other words, you should complete all these steps before repeating the process to add another version.
+In other words, you should complete all these steps before repeating the process to add another version, as they build on previous ones in a way that is difficult to change later.
 
 #### 1. Note which [release version](https://github.com/ScratchAddons/ScratchAddons/releases) of Scratch Addons you want to add, and check out its tag.
 
@@ -60,16 +61,16 @@ Open a clone of Scratch Addons in your terminal, then use this command:
 git checkout <tag_name>
 ```
 
-#### 2. Collect the cumulative changes between your chosen version and the previous version listed in Time Machine.
+#### 2. Collect the cumulative changes between your chosen version and the previous version that is listed in Time Machine.
 
-Use this command in Scratch Addons after checkout:
+One way to see what has changed is to use this command in Scratch Addons after checkout:
 ```shell
 git diff --name-status <previous_tag_name> HEAD
 ```
 
-#### 3. Append a change list to `/addons/changes.json` including any addon manifests that were added, updated, or removed, based on the list from step 3.
+#### 3. Append a change list to `/addons/changes.json`. Include any addon manifests that were added, updated, or removed, based on the list from step 2.
 
-Ignore changes to `userscripts`, `userstyles`, `customCssVariables`, `persistentScripts`, `dynamicEnable`, `dynamicDisable`, or similar properties, as they don't have an effect on the content in the settings page.
+You can ignore changes to `userscripts`, `userstyles`, `customCssVariables`, `persistentScripts`, `dynamicEnable`, `dynamicDisable`, and similar properties that don't have an effect on the content in the settings page.
 
 The entry should look like this:
 ```json
@@ -81,23 +82,25 @@ The entry should look like this:
 }
 ```
 
-#### 4. Copy any addon manifests that were added or modified from Scratch Addons into Time Machine in a new directory, `/addons/<version_number>`.
+#### 4. Import any addon manifests that were added or modified from Scratch Addons into a new directory in Time Machine: `/addons/<version_number>`.
 
-Remember, unlike Scratch Addons, which stores manifests in `/addons/<addon_id>/addon.json`, Time Machine looks for them in `/addons/<version_number>/<addon_id>.json`.
+Copy each addon manifest to `/addons/<version_number>/<addon_id>.json`.
 
-#### 5. Copy the contents of the popup and settings page from your chosen version of Scratch Addons into Time Machine in `/pages/<version_number>`.
+(This path is different than in Scratch Addons, where manifests are stored in `/addons/<addon_id>/addon.json`.)
 
-This is also where the popup tabs go.
+#### 5. Import the popup window, popup tabs, and settings page from your chosen version of Scratch Addons into a new directory in Time Machine: `/pages/<version_number>`.
 
-You can use the `/images` and `/libraries` directories to store images and code shared by multiple page versions. Don't forget to check the URLs in the pages, updating each one to point to the appropriate resource in Time Machine.
+The Scratch Addons popup and settings pages are found in its `/webpages` directory, and the popup tabs are found in `/popups`. In Time Machine, however, they all go in the same directory.
 
-#### 6. Add the new version to the version selector in both `/ui/settings-pages.html` and `/ui/popup-pages.html`.
+You can use Time Machine's `/images` and `/libraries` directories to store images and code shared by multiple page versions. Don't forget to update URLs so they point to the appropriate resource locations in Time Machine. (Tip: Use a find-and-replace tool!)
 
-Newer versions go at the top.
+#### 6. Add the new version to the menu in both `/ui/settings-pages.html` and `/ui/popup-pages.html`.
+
+Just add an `<option>` element to each drop-down menu. Newer versions go at the top.
 
 #### 7. Use Time Machine to make sure everything is working.
 
-Simply save your changes and check the new version in the extension's settings page and popup containers.
+Remember to save your changes, and check the new settings and popup pages in the extension by selecting the version from the menu.
 
 ## Licenses
 

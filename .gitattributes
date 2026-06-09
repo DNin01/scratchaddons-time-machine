@@ -1,7 +1,5 @@
 * text=auto
 
-.vscode/*.json text linguist-language=jsonc
-*.code-snippets text linguist-language=jsonc
 *.css text
 *.html text
 *.js text
@@ -13,3 +11,6 @@
 *.mp3 binary
 *.png binary
 *.woff2 binary
+
+.vscode/*.json text linguist-language=jsonc
+manifest.json text linguist-language=jsonc
