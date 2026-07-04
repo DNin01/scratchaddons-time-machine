@@ -12,7 +12,7 @@ async function loadSettingsPage() {
   addonData = await getDataForVersion(selectedVersion);
 
   console.log(`Loading settings page v${selectedVersion}...`);
-  iframeElem.contentWindow.location = `/pages/${selectedVersion}/settings/index.html`;
+  iframeElem.contentWindow.location = `/pages/${selectedVersion}/settings/index.html${location.hash}`;
 
   // Replace 'v*.*.*' (inside the parentheses) in the document title
   document.title = document.title.replace(/(?<=\().*(?=\))/, selectedVersion);

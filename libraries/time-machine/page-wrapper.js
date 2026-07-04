@@ -15,6 +15,14 @@ const pageVersion = String(location.pathname.match(/\d+.\d+.\d+/));
 chrome.runtime.getVersion = () => pageVersion;
 chrome.runtime.getManifest = () => ({ version: pageVersion, version_name: pageVersion });
 
+// The Addons tab in the extension's popup is actually an iframe of the addon settings page.
+// The page can tell if it is in an iframe by checking for the presence of a parent frame.
+// Unfortunately, this includes Time Machine itself.
+// We can avoid being detected by making SA think it's one level higher than in reality:
+if (window.parent === window.top) {
+  window.parent = window;
+}
+
 // Open the settings page inside the Time Machine container.
 chrome.runtime.openOptionsPage = () => chrome.tabs.create({ url: "ui/settings-pages.html" });
 
