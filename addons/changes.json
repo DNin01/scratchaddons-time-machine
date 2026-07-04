@@ -134,5 +134,18 @@
       "forum-search",
       "full-signature"
     ]
+  },
+  {
+    "version": "1.6.1",
+    "added": [
+      "color-picker",
+      "mediarecorder"
+    ],
+    "modified": [
+      "animated-thumb",
+      "more-links",
+      "my-ocular",
+      "studio-tools"
+    ]
   }
 ]

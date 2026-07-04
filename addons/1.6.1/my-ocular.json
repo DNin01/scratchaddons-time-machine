@@ -1,0 +1,26 @@
+{
+  "name": "Show my-ocular status",
+  "description": "Shows ocular statuses and favorite colours. Uses my-ocular.jeffalo.net to obtain status data. Statuses are moderated and filtered.",
+  "credits": [
+    {
+      "name": "Jeffalo"
+    }
+  ],
+  "settings": [
+    {
+      "name": "Show on profiles",
+      "id": "profile",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "name": "Show on the forums",
+      "id": "discuss",
+      "type": "boolean",
+      "default": true
+    }
+  ],
+  "tags": ["forums", "community"],
+  "enabledByDefault": false,
+  "l10n": true
+}
