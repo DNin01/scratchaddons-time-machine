@@ -1,0 +1,11 @@
+{
+  "name": "Cat blocks",
+  "description": "Brings back editor cat hat blocks from April Fools 2020.",
+  "credits": [
+    {
+      "name": "TheColaber"
+    }
+  ],
+  "tags": ["easterEgg"],
+  "enabledByDefault": false
+}

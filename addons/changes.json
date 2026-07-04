@@ -147,5 +147,31 @@
       "my-ocular",
       "studio-tools"
     ]
+  },
+  {
+    "version": "1.7.1",
+    "added": [
+      "better-quoter",
+      "cat-blocks",
+      "data-category-tweaks-v2",
+      "mute-project",
+      "semicolon"
+    ],
+    "modified": [
+      "60fps",
+      "animated-thumb",
+      "bitmap-copy",
+      "cloud-games",
+      "confirm-actions",
+      "editor-colored-context-menus",
+      "editor-stage-left",
+      "editor-stepping",
+      "editor-theme3",
+      "pause",
+      "project-info",
+      "project-notes-tabs",
+      "scratch-messaging",
+      "scratchr2"
+    ]
   }
 ]

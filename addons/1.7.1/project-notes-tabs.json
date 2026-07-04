@@ -1,0 +1,13 @@
+{
+  "name": "Project notes tabs",
+  "description": "Creates tabs on a project page for the \"Instructions\" section and the \"Notes and Credits\" section.",
+  "credits": [
+    {
+      "name": "TheColaber",
+      "link": "https://scratch.mit.edu/users/TheColaber"
+    }
+  ],
+  "tags": ["community"],
+  "enabledByDefault": false,
+  "l10n": true
+}
