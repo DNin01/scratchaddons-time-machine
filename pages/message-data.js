@@ -40,5 +40,8 @@ export default function getMessages(version) {
     recommendedTooltip: "This is recommended by Scratch Addons. Try it out!",
     betaTooltip: "Keep in mind that this addon might have bugs.",
     forumsTooltip: "This addon applies to Scratch's Discussion Forums.",
+    search: "Search",
+    translate: "Help Translate",
+    new: "New!",
   }
 }

@@ -118,5 +118,21 @@
       "scratch-notifier",
       "search-profile"
     ]
+  },
+  {
+    "version": "1.5.1",
+    "added": [
+      "better-featured-project",
+      "onion-skinning"
+    ],
+    "modified": [
+      "animated-thumb",
+      "curator-link",
+      "editor-messages",
+      "editor-theme3",
+      "forum-quote-code-beautifier",
+      "forum-search",
+      "full-signature"
+    ]
   }
 ]
