@@ -32,7 +32,7 @@ async function getAddonsForVersion(version) {
       delete item.options;
       upgradeCount++;
     }
-    if (item.enabled_by_default) {
+    if (typeof item.enabled_by_default === "boolean") {
       item.enabledByDefault = item.enabled_by_default;
       delete item.enabled_by_default;
       upgradeCount++;
