@@ -31,11 +31,11 @@ selectElem.addEventListener("change", async (e) => {
 });
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  switch (request) {
-    case "getSettingsInfo":
-      sendResponse(addonData);
-    break;
-    default: console.error(new URL(sender.url).pathname + " sent an unrecognized request:", request);
+  if (!sender.url.includes("settings/")) return;
+  if (request === "getSettingsInfo") {
+    sendResponse(addonData);
+  } else {
+    console.error(new URL(sender.url).pathname + " sent an unrecognized request:", request);
   }
 });
 
