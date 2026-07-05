@@ -1,0 +1,6 @@
+{
+  "name": "Fix capitalization of Account Settings",
+  "description": "Changes \"Account settings\" in the account menu to \"Account Settings\".",
+  "tags": ["easterEgg"],
+  "l10n": true
+}

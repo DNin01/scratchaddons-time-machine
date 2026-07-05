@@ -8,6 +8,9 @@ export default class WebsiteLocalizationProvider {
   loadMessages() {
     return true;
   }
+  loadByAddonId() {
+    return true;
+  }
   get(key) {
     return key;
   }

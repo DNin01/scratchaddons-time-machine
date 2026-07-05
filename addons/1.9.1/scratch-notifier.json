@@ -24,8 +24,21 @@
       "name": "Notification sound",
       "id": "notification_sound",
       "type": "select",
-      "potentialValues": ["Silent", "System default", "Scratch Addons ping"],
-      "default": "System default"
+      "potentialValues": [
+        {
+          "id": "silent",
+          "name": "Silent"
+        },
+        {
+          "id": "system-default",
+          "name": "System default"
+        },
+        {
+          "id": "addons-ping",
+          "name": "Scratch Addons ping"
+        }
+      ],
+      "default": "system-default"
     },
     {
       "name": "@comment.svg Notify profile comments & replies",
@@ -80,8 +93,15 @@
       "id": "remixproject_notifications",
       "type": "boolean",
       "default": true
+    },
+    {
+      "name": "@adminusers.svg Notify studio promotions",
+      "id": "becomeownerstudio_notifications",
+      "type": "boolean",
+      "default": true
     }
   ],
   "tags": ["community", "recommended"],
-  "enabledByDefault": false
+  "enabledByDefault": false,
+  "l10n": true
 }

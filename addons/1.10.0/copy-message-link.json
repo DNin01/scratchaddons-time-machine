@@ -1,0 +1,13 @@
+{
+  "name": "Copy link to comment button",
+  "description": "Adds a \"Copy Link\" button to all Scratch comments, next to the \"Report\" button.",
+  "credits": [
+    {
+      "name": "Sly-Little-Fox",
+      "link": "https://github.com/Sly-Little-Fox/"
+    }
+  ],
+  "tags": ["community", "recommended"],
+  "l10n": true,
+  "enabledByDefault": false
+}

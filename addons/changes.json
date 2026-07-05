@@ -189,6 +189,30 @@
       "editor-stepping",
       "mediarecorder",
       "more-links"
+    ],
+    "removed": [
+      "search-load-more-fix"
+    ]
+  },
+  {
+    "version": "1.9.1",
+    "added": [
+      "account-settings-capitalize",
+      "show-bbcode"
+    ],
+    "modified": [
+      "hide-flyout",
+      "scratch-notifier"
+    ]
+  },
+  {
+    "version": "1.10.0",
+    "added": [
+      "copy-message-link",
+      "load-extensions"
+    ],
+    "modified": [
+      "pause"
     ]
   }
 ]
