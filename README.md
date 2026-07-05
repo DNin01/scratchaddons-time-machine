@@ -21,9 +21,9 @@ Time Machine includes the following versions of Scratch Addons:
 - 1.2.1
 - 1.3.1
 - 1.4.0
-- 1.5.1
+- 1.5.0
 - 1.6.1
-- 1.7.1
+- 1.7.0
 - 1.8.0
 
 ## Usage
@@ -64,6 +64,9 @@ Open a clone of Scratch Addons in your terminal, then use this command:
 ```shell
 git checkout <tag_name>
 ```
+
+> [!TIP]
+> **Which patch release should I choose?** It is suggested to pick the version ending in ".0", unless that version was [pulled from production](https://github.com/ScratchAddons/ScratchAddons/pull/574) or contains [bug fixes related to the UI](https://github.com/ScratchAddons/ScratchAddons/releases/tag/v1.3.1).
 
 #### 2. Collect the cumulative changes between your chosen version and the previous version that is listed in Time Machine.
 
