@@ -111,6 +111,10 @@ Just add an `<option>` element to each drop-down menu. Newer versions go at the 
 
 Remember to save your changes, and check the new settings and popup pages in the extension by selecting the version from the menu.
 
+### Checking your work
+
+In case you make a mistake with a change list or addon manifest while adding a version, the `/ui/test.html` page will alert you of any discrepancies between the data in Time Machine and your Scratch Addons installation. To run the check, make sure you've copied and pasted at least `/ScratchAddons/addons` into Time Machine's own directory, then just open the extension's context menu and select _Debug → Check addon data_.
+
 ## Licenses
 
 Scratch Addons Time Machine is available under [GNU General Public License v3](LICENSE) terms. Licenses for included software libraries can be found in the [`/licenses` directory](/licenses).

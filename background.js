@@ -21,7 +21,7 @@ chrome.contextMenus.create({
 });
 chrome.contextMenus.create({
   id: "test",
-  title: "Test addon data",
+  title: "Check addon data",
   parentId: "debug",
   contexts: ["action"],
 });
