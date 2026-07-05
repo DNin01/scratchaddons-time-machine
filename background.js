@@ -14,6 +14,17 @@ chrome.contextMenus.create({
   title: "Licenses",
   contexts: ["action"],
 });
+chrome.contextMenus.create({
+  id: "debug",
+  title: "Debug",
+  contexts: ["action"],
+});
+chrome.contextMenus.create({
+  id: "test",
+  title: "Test addon data",
+  parentId: "debug",
+  contexts: ["action"],
+});
 chrome.contextMenus.onClicked.addListener((onClickData) => {
   switch (onClickData.menuItemId) {
     case "popup":
@@ -24,6 +35,9 @@ chrome.contextMenus.onClicked.addListener((onClickData) => {
     break;
     case "about":
       chrome.tabs.create({ url: "ui/about.html" });
+    break;
+    case "test":
+      chrome.tabs.create({ url: "ui/test.html" });
     break;
     default: console.error("Unrecognized menu item:", onClickData.menuItemId);
   }
