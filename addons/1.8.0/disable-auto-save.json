@@ -14,12 +14,6 @@
       "link": "https://scratch.mit.edu/users/RustingRobot"
     }
   ],
-  "userscripts": [
-    {
-      "url": "userscript.js",
-      "matches": ["https://scratch.mit.edu/projects/*"]
-    }
-  ],
   "tags": ["editor"],
   "enabledByDefault": false,
   "l10n": true

@@ -11,12 +11,6 @@
       "link": "https://scratch.mit.edu/users/pufferfish101007"
     }
   ],
-  "userscripts": [
-    {
-      "url": "userscript.js",
-      "matches": ["https://scratch.mit.edu/discuss/topic/*"]
-    }
-  ],
   "tags": ["forums", "community"],
   "l10n": true,
   "info": [

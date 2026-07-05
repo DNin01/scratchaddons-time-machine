@@ -7,22 +7,6 @@
       "link": "https://github.com/Hans5958/userscripts/blob/master/Scratch/Curator%20Links.user.js"
     }
   ],
-  "userscripts": [
-    {
-      "url": "script.js",
-      "matches": ["https://scratch.mit.edu/"]
-    }
-  ],
-  "userstyles": [
-    {
-      "url": "style.css",
-      "matches": ["https://scratch.mit.edu/"],
-      "settingMatch": {
-        "id": "styleAsNormalText",
-        "value": true
-      }
-    }
-  ],
   "settings": [
     {
       "id": "styleAsNormalText",

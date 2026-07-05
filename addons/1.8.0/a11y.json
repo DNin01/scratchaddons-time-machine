@@ -14,18 +14,6 @@
       "link": "https://scratch.mit.edu/users/A-E-/"
     }
   ],
-  "userscripts": [
-    {
-      "url": "userscript.js",
-      "matches": ["https://scratch.mit.edu/projects/*"]
-    }
-  ],
-  "userstyles": [
-    {
-      "url": "style.css",
-      "matches": ["https://scratch.mit.edu/projects/*"]
-    }
-  ],
   "settings": [
     {
       "name": "Enable tab navigation for sprites",
