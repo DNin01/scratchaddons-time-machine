@@ -173,5 +173,22 @@
       "scratch-messaging",
       "scratchr2"
     ]
+  },
+  {
+    "version": "1.8.0",
+    "added": [
+      "a11y",
+      "comments-linebreaks",
+      "disable-auto-save",
+      "hide-flyout"
+    ],
+    "modified": [
+      "better-quoter",
+      "cat-blocks",
+      "data-category-tweaks-v2",
+      "editor-stepping",
+      "mediarecorder",
+      "more-links"
+    ]
   }
 ]
