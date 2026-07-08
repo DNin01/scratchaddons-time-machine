@@ -1,10 +1,11 @@
 // First of all, get the change list
-const changesFile = await (await fetch("/addons/changes.json")).json();
+const changesFile = fetch("/addons/changes.json").then((res) => res.json());
 
 async function getAddonsForVersion(version) {
   // Filter to only changes since the requested version
-  const currentVersionIndex = changesFile.findIndex((list) => list.version === version);
-  const pastChanges = changesFile.slice(0, currentVersionIndex + 1);
+  console.time(`Prepare addon data (v${version})`);
+  const currentVersionIndex = (await changesFile).findIndex((list) => list.version === version);
+  const pastChanges = (await changesFile).slice(0, currentVersionIndex + 1);
 
   // Accumulate changes to addons, selecting the most recent iteration of each
   const addonVersions = {};
@@ -40,13 +41,14 @@ async function getAddonsForVersion(version) {
   };
   if (upgradeCount) console.log(upgradeCount + " manifest properties upgraded");
 
-  // Wrap all manifests in an object that the webpages can use
+  // Wrap each manifest in an object that the webpages can use
   const manifestsObj = results.map((item, index) => ({
     addonId: addonIds[index],
     manifest: item,
   }));
 
-  console.log(manifestsObj.length + " addon manifests stored", manifestsObj);
+  console.log(manifestsObj.length + " addon manifests retrieved", manifestsObj);
+  console.timeEnd(`Prepare addon data (v${version})`);
   return manifestsObj;
 }
 

@@ -1,4 +1,7 @@
-chrome.contextMenus.removeAll(); // Just for good measure
+import getDataForVersion from "./services/get-addons.js";
+
+/* -- Set up extension context menu -- */
+chrome.contextMenus.removeAll();
 chrome.contextMenus.create({
   id: "popup",
   title: "Popup",
@@ -40,5 +43,33 @@ chrome.contextMenus.onClicked.addListener((onClickData) => {
       chrome.tabs.create({ url: "ui/test.html" });
     break;
     default: console.error("Unrecognized menu item:", onClickData.menuItemId);
+  }
+});
+
+/* -- Provide addon data to other scripts -- */
+let addonDataPromise; // Cache for addon data that was loaded recently
+let lastVersion = "";
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  const sendingPage = new URL(sender.url).pathname;
+  // Regex to get the version number of a SA page:
+  const pageVersion = String(sendingPage.match(/\d+.\d+.\d+/));
+  if (request === "getSettingsInfo") {
+    // Load data if it isn't already in the cache
+    if (pageVersion !== lastVersion) {
+      lastVersion = pageVersion;
+      addonDataPromise = getDataForVersion(pageVersion);
+    }
+    (async () => {
+      sendResponse(await addonDataPromise);
+      console.log(`Request from ${sendingPage}:`, request, "\nResponse:", await addonDataPromise);
+    })();
+    // Message handlers that respond asynchronously must...
+    return true;
+  } else if (request.scratchMessaging === "getData") {
+    sendResponse({ error: "loggedOut" });
+  } else if (request === "checkPermissions") {
+    console.log(`Request from ${sendingPage}:`, request, "\nIgnored");
+  } else {
+    console.error(sendingPage + " sent an unrecognized request:", request);
   }
 });

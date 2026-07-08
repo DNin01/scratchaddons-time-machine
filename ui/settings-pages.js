@@ -1,23 +1,15 @@
-import getDataForVersion from "./services/get-addons.js";
-
 const selectElem = document.querySelector("select");
 const iframeElem = document.querySelector("iframe");
 
 let selectedVersion = localStorage.getItem("v") ?? selectElem.firstElementChild.value;
 selectElem.value = selectedVersion;
-let addonData;
 
-async function loadSettingsPage() {
-  console.log(`Preparing settings page v${selectedVersion}...`);
-  addonData = await getDataForVersion(selectedVersion);
-
+function loadSettingsPage() {
   console.log(`Loading settings page v${selectedVersion}...`);
   iframeElem.contentWindow.location = `/pages/${selectedVersion}/settings/index.html${location.hash}`;
 
   // Replace 'v*.*.*' (inside the parentheses) in the document title
   document.title = document.title.replace(/(?<=\().*(?=\))/, selectedVersion);
-
-  return true;
 }
 
 selectElem.addEventListener("change", async (e) => {
@@ -26,18 +18,9 @@ selectElem.addEventListener("change", async (e) => {
   localStorage.setItem("v", selectedVersion);
 
   selectElem.disabled = true;
-  await loadSettingsPage();
+  loadSettingsPage();
   setTimeout(() => selectElem.disabled = false, 500);
 });
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (!sender.url.includes("settings/")) return;
-  if (request === "getSettingsInfo") {
-    sendResponse(addonData);
-  } else {
-    console.error(new URL(sender.url).pathname + " sent an unrecognized request:", request);
-  }
-});
-
-await loadSettingsPage();
+loadSettingsPage();
 selectElem.disabled = false;
