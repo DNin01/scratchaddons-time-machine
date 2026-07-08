@@ -1,5 +1,7 @@
 import getDataForVersion from "./services/get-addons.js";
 
+const consoleLabel = ["%cService worker", "padding-inline: 4px; font-weight: bold; border: 1px solid currentColor; border-radius: 8px"];
+
 /* -- Set up extension context menu -- */
 chrome.contextMenus.removeAll();
 chrome.contextMenus.create({
@@ -42,7 +44,7 @@ chrome.contextMenus.onClicked.addListener((onClickData) => {
     case "test":
       chrome.tabs.create({ url: "ui/test.html" });
     break;
-    default: console.error("Unrecognized menu item:", onClickData.menuItemId);
+    default: console.error(...consoleLabel, "Unrecognized menu item:", onClickData.menuItemId);
   }
 });
 
@@ -61,15 +63,15 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
     (async () => {
       sendResponse(await addonDataPromise);
-      console.log(`Request from ${sendingPage}:`, request, "\nResponse:", await addonDataPromise);
+      console.log(...consoleLabel, `Request from ${sendingPage}:`, request, "\nResponse:", await addonDataPromise);
     })();
     // Message handlers that respond asynchronously must...
     return true;
   } else if (request.scratchMessaging === "getData") {
     sendResponse({ error: "loggedOut" });
   } else if (request === "checkPermissions") {
-    console.log(`Request from ${sendingPage}:`, request, "\nIgnored");
+    console.log(...consoleLabel, `Request from ${sendingPage}:`, request, "\nIgnored");
   } else {
-    console.error(sendingPage + " sent an unrecognized request:", request);
+    console.error(...consoleLabel, sendingPage + " sent an unrecognized request:", request);
   }
 });
