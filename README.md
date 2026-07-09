@@ -42,15 +42,16 @@ Scratch Addons versions prior to 1.38.0 ran on Manifest V2, which lost support f
 
 Scratch Addons Time Machine's source code contains addon data and settings page files organized by version number.
 
-When the user selects a version using the settings page or popup containers, the first thing that happens is the version's corresponding addon files are retrieved using a version control system. The database is stored in [`/addons`](/addons) alongside a [`changes.json`](/addons/changes.json) file. Events from the change list are processed up to the selected version, and the entries are used to load the latest revision of each addon manifest that still exists.
-
-Next, an embed of the corresponding webpage is loaded. It receives the data resulting from the process described above so it can display the addons from the same version.
+When the user selects a version using the settings page or popup containers, a few things happen at once:
+- The version's corresponding addon files are retrieved from a database in [`/addons`](/addons), version-controlled by the [`changes.json`](/addons/changes.json) file. Events from the change list are processed up to the selected version, and the entries are used to load the latest revision of each addon manifest that still exists.
+- An embed of the appropriate webpage is loaded. It receives the data resulting from the process described above so it can display the addons as they were in the version.
 
 Here's where some of these processes are located:
 - [`/ui/settings-pages.html`](/ui/settings-pages.html) — Loads the embeds of settings pages
 - [`/ui/popup-pages.html`](/ui/popup-pages.html) — Loads the embeds of popup pages
-- [`/ui/services/get-addons.js`](/ui/services/get-addons.js) — Finds the appropriate versions of each addon, and processes the data for use by the webpage embed
-- [`/libraries/time-machine/page-wrapper.js`](/libraries/time-machine/page-wrapper) — Compatibility layers that help the webpage embed work properly in a foreign browser extension
+- [`/background.js`](/background.js) — In addition to other background processes, sends responses to messages passed by the webpage embeds
+- [`/services/get-addons.js`](/services/get-addons.js) — Finds the appropriate versions of each addon, and processes the data for use by the webpage embed
+- [`/libraries/time-machine/page-wrapper.js`](/libraries/time-machine/page-wrapper.js) — Compatibility layers that help the webpage embed work properly in a foreign browser extension
 
 ### Adding versions
 

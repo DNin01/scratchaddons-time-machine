@@ -1,4 +1,4 @@
-import getDataForVersion from "./services/get-addons.js";
+import getDataForVersion from "/services/get-addons.js";
 
 try {
   // Normally we wouldn't use global variables, but it is useful for debugging purposes
