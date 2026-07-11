@@ -1,6 +1,9 @@
 import getDataForVersion from "./services/get-addons.js";
 
-const consoleLabel = ["%cService worker", "padding-inline: 4px; font-weight: bold; border: 1px solid currentColor; border-radius: 8px"];
+const swConsoleLabel = ["%cService worker", "padding-inline: 4px; font-weight: bold; border: 1px solid currentColor; border-radius: 8px"];
+const messageConsoleLabel = ["%cMessage", "padding-inline: 4px; font-weight: bold; border: 1px solid currentColor; border-radius: 8px"];
+
+console.log(...swConsoleLabel, "Starting");
 
 /* -- Set up extension context menu -- */
 chrome.contextMenus.removeAll();
@@ -44,7 +47,7 @@ chrome.contextMenus.onClicked.addListener((onClickData) => {
     case "test":
       chrome.tabs.create({ url: "ui/test.html" });
     break;
-    default: console.error(...consoleLabel, "Unrecognized menu item:", onClickData.menuItemId);
+    default: console.error(...swConsoleLabel, "Unrecognized menu item:", onClickData.menuItemId);
   }
 });
 
@@ -52,7 +55,11 @@ chrome.contextMenus.onClicked.addListener((onClickData) => {
 let addonDataPromise; // Cache for addon data that was loaded recently
 let lastVersion = "";
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request === "checkPermissions") {
+    return; // Ignore, no action needed
+  }
   const sendingPage = new URL(sender.url).pathname;
+  console.log(...messageConsoleLabel, `Request from ${sendingPage}:`, request);
   // Regex to get the version number of a SA page:
   const pageVersion = String(sendingPage.match(/\d+.\d+.\d+/));
   if (request === "getSettingsInfo") {
@@ -63,15 +70,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
     (async () => {
       sendResponse(await addonDataPromise);
-      console.log(...consoleLabel, `Request from ${sendingPage}:`, request, "\nResponse:", await addonDataPromise);
     })();
     // Message handlers that respond asynchronously must...
     return true;
   } else if (request.scratchMessaging === "getData") {
     sendResponse({ error: "loggedOut" });
-  } else if (request === "checkPermissions") {
-    console.log(...consoleLabel, `Request from ${sendingPage}:`, request, "\nIgnored");
   } else {
-    console.error(...consoleLabel, sendingPage + " sent an unrecognized request:", request);
+    console.error("Request not recognized:", request);
   }
 });

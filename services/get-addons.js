@@ -1,9 +1,12 @@
+const consoleLabel = ["%cAddonmulator", "padding-inline: 4px; font-weight: bold; border: 1px solid currentColor; border-radius: 8px"];
+
 // First of all, get the change list
 const changesFile = fetch("/addons/changes.json").then((res) => res.json());
 
 async function getAddonsForVersion(version) {
+  const startTime = performance.now();
+
   // Filter to only changes since the requested version
-  console.time(`Prepare addon data (v${version})`);
   const currentVersionIndex = (await changesFile).findIndex((list) => list.version === version);
   const pastChanges = (await changesFile).slice(0, currentVersionIndex + 1);
 
@@ -19,19 +22,19 @@ async function getAddonsForVersion(version) {
     }
   };
   const addonIds = Object.keys(addonVersions);
-  console.log(`Loading ${addonIds.length} addons`, addonVersions);
+  console.log(...consoleLabel, `Loading ${addonIds.length} addons from up to v${version}`, addonVersions);
   let failedCount = 0;
   const paths = addonIds.map((id) => `/addons/${addonVersions[id]}/${id}.json`);
   const fetches = paths.map((path) => fetch(path)
     .then((res) => res.json())
     .catch((err) => {
-      console.error(`Error while accessing ${path}:`, err);
+      console.error(...consoleLabel, `Error while accessing ${path}:`, err);
       failedCount++;
       return;
     })
   );
   const results = await Promise.all(fetches);
-  if (failedCount) console.warn(`${failedCount} addons not loaded`);
+  if (failedCount) console.warn(...consoleLabel, `${failedCount} addons not loaded`);
 
   let upgradeCount = 0;
   for (const item of results.filter((item) => typeof item === "object")) {
@@ -48,7 +51,7 @@ async function getAddonsForVersion(version) {
       upgradeCount++;
     }
   }
-  if (upgradeCount) console.log(upgradeCount + " manifest properties upgraded");
+  if (upgradeCount) console.log(...consoleLabel, upgradeCount + " manifest properties upgraded");
 
   // Wrap each manifest in an object that the webpages can use
   const manifestsObj = results.map((item, index) => ({
@@ -58,8 +61,8 @@ async function getAddonsForVersion(version) {
   // Exclude items that failed to load
   const validManifestsObj = manifestsObj.filter(({ manifest }) => typeof manifest === "object");
 
-  console.log(validManifestsObj.length + " addon manifests retrieved", validManifestsObj);
-  console.timeEnd(`Prepare addon data (v${version})`);
+  const responseTime = Math.floor(performance.now() - startTime);
+  console.log(...consoleLabel, `Completed in ${responseTime} ms`, validManifestsObj);
   return validManifestsObj;
 }
 
