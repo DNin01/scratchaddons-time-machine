@@ -214,5 +214,21 @@
     "modified": [
       "pause"
     ]
+  },
+  {
+    "version": "1.11.1",
+    "added": [
+      "block-palette-icons",
+      "folders",
+      "longer-wiwo",
+      "scratchstats",
+      "variable-manager"
+    ],
+    "modified": [
+      "60fps",
+      "animated-thumb",
+      "editor-stage-left",
+      "load-extensions"
+    ]
   }
 ]

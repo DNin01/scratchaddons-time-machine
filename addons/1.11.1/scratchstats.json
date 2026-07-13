@@ -1,0 +1,8 @@
+{
+  "name": "Profile statistics",
+  "description": "Shows statistics from ScratchDB on profile pages.",
+  "tags": ["community"],
+  "credits": [{ "name": "Maximouse" }],
+  "libraries": ["chartjs"],
+  "l10n": true
+}
