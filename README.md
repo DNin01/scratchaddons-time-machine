@@ -71,7 +71,7 @@ git checkout <tag_name>
 ```
 
 > [!TIP]
-> **Which patch release should I choose?** It is suggested to pick the version ending in ".0", unless that version was [pulled from production](https://github.com/ScratchAddons/ScratchAddons/pull/574) or contains [bug fixes related to the UI](https://github.com/ScratchAddons/ScratchAddons/releases/tag/v1.3.1).
+> **Which patch release should I choose?** It is suggested to pick the version ending in ".0", unless that version was [pulled from production](https://github.com/ScratchAddons/ScratchAddons/pull/574) or a newer patch contains [bug fixes related to the UI](https://github.com/ScratchAddons/ScratchAddons/releases/tag/v1.3.1).
 
 #### 2. Collect the cumulative changes between your chosen version and the previous version that is listed in Time Machine.
 
@@ -102,9 +102,21 @@ Copy each addon manifest to `/addons/<version_number>/<addon_id>.json`.
 
 #### 5. Import the popup window, popup tabs, and settings page from your chosen version of Scratch Addons into a new directory in Time Machine: `/pages/<version_number>`.
 
-The Scratch Addons popup and settings pages are found in its `/webpages` directory, and the popup tabs are found in `/popups`. In Time Machine, however, they all go in the same directory.
+The Scratch Addons popup and settings pages are found in its `/webpages` directory, and the popup tabs are found in `/popups`. In Time Machine, however, they all go in the same directory, `/pages/<version_number>`.
 
-You can use Time Machine's `/images` and `/libraries` directories to store images and code shared by multiple page versions. Don't forget to update URLs so they point to the appropriate resource locations in Time Machine. (Tip: Use a find-and-replace tool!)
+Images from Scratch Addons are stored in Time Machine's `/images` directory. Shared code and libraries are stored in `/libraries`.
+
+Make sure the links to these resources are updated whenever you add pages. Some examples:
+
+| Path | Replacement |
+|---|---|
+| ../../images/icons/ | /images/scratch-addons/ |
+| ../../libraries/ | /libraries/scratch-addons/ |
+| ../../webpages/ | ../ |
+
+Most of these paths can be fixed easily with a find/replace procedure.
+
+All pages must also have a module import for `/libraries/time-machine/page-wrapper.js` or else they won't function as expected.
 
 #### 6. Add the new version to the menu in both `/ui/settings-pages.html` and `/ui/popup-pages.html`.
 
@@ -113,6 +125,11 @@ Just add an `<option>` element to each drop-down menu. Newer versions go at the 
 #### 7. Use Time Machine to make sure everything is working.
 
 Remember to save your changes, and check the new settings and popup pages in the extension by selecting the version from the menu.
+
+### Common errors while testing
+
+- `TypeError: Failed to fetch at get-addons.js` errors usually happen when one or more addon manifests are missing, misnamed, or in the wrong location. Review steps 3-4.
+- Blank images and `net::ERR_FILE_NOT_FOUND` errors are usually caused by incorrect file paths. Review step 5.
 
 ### Checking your work
 

@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <title>Scratch Addons - Messaging</title>
     <link rel="stylesheet" href="popup.css" />
-    <link href="/libraries/thirdparty/Sora.css" rel="stylesheet" />
-    <script src="/libraries/thirdparty/vue.js" defer></script>
+    <link href="/libraries/scratch-addons/thirdparty/Sora.css" rel="stylesheet" />
+    <script src="/libraries/scratch-addons/thirdparty/vue.js" defer></script>
     <script src="./popup.js" defer></script>
     <base target="_blank" />
 
@@ -57,7 +57,7 @@
           @click="messageTypeExtended.follows = !messageTypeExtended.follows"
         >
           <div class="btn-dropdown">
-            <img src="../../webpages/settings/expand.svg" alt="v" :class="{'reverted': messageTypeExtended.follows}" />
+            <img src="/images/scratch-addons/expand.svg" alt="v" :class="{'reverted': messageTypeExtended.follows}" />
           </div>
           <span class="message-type-title-text">Follows</span>
           <span class="float-right">🧑 {{ follows.length }}</span>
@@ -77,7 +77,7 @@
         >
           <div class="btn-dropdown">
             <img
-              src="../../webpages/settings/expand.svg"
+              src="/images/scratch-addons/expand.svg"
               alt="v"
               :class="{'reverted': messageTypeExtended.studioInvites}"
             />
@@ -103,7 +103,7 @@
         >
           <div class="btn-dropdown">
             <img
-              src="../../webpages/settings/expand.svg"
+              src="/images/scratch-addons/expand.svg"
               alt="v"
               :class="{'reverted': messageTypeExtended.forumActivity}"
             />
@@ -129,7 +129,7 @@
         >
           <div class="btn-dropdown">
             <img
-              src="../../webpages/settings/expand.svg"
+              src="/images/scratch-addons/expand.svg"
               alt="v"
               :class="{'reverted': messageTypeExtended.studioActivity}"
             />
@@ -152,7 +152,7 @@
           @click="messageTypeExtended.remixes = !messageTypeExtended.remixes"
         >
           <div class="btn-dropdown">
-            <img src="../../webpages/settings/expand.svg" alt="v" :class="{'reverted': messageTypeExtended.remixes}" />
+            <img src="/images/scratch-addons/expand.svg" alt="v" :class="{'reverted': messageTypeExtended.remixes}" />
           </div>
           <span class="message-type-title-text">Remixes</span>
           <span class="float-right">🔄 {{ remixes.length }}</span>

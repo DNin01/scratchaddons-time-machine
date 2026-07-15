@@ -1,3 +1,4 @@
+// import downloadBlob from "../../libraries/download-blob.js";
 const NEW_ADDONS = ["data-category-tweaks-v2", "mute-project"];
 
 const browserLevelPermissions = ["notifications", "clipboardWrite"];
