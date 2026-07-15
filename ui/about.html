@@ -21,6 +21,21 @@
           <a href="https://v1.vuejs.org">Website</a>
           <a href="https://github.com/vuejs/vue">Source code</a>
         </li>
+        <li aria-label="color-picker" id="color-picker">
+          <span>color-picker</span>
+          <a href="/licenses/color-picker.txt" style="font-weight: 600;">License (MIT)</a>
+          <a href="https://github.com/woutervroege/color-picker">Source code</a>
+        </li>
+        <ul>
+          <li aria-label="TinyColor" id="tinycolor">
+            <span>TinyColor</span>
+            <a href="/licenses/tinycolor.txt" style="font-weight: 600;">License (MIT)</a>
+            <span>Code:
+              <a href="https://github.com/scttcper/tinycolor">Fork</a>,
+              <a href="https://github.com/bgrins/TinyColor">Source</a>
+            </span>
+          </li>
+        </ul>
         <li aria-label="Sora" id="sora">
           <span>Sora</span>
           <a href="/licenses/sora.txt" style="font-weight: 600;">License (OFL)</a>
@@ -88,7 +103,7 @@
         li > * {
           margin: 7px;
         }
-        li > span {
+        li > :first-child {
           flex-grow: 1;
           font-weight: 600;
         }

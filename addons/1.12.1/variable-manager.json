@@ -1,0 +1,15 @@
+{
+  "name": "Variable manager",
+  "description": "Adds a tab next to \"sounds\" in the editor for easily updating variables and lists.",
+  "credits": [
+    {
+      "name": "Jeffalo"
+    },
+    {
+      "name": "GarboMuffin"
+    }
+  ],
+  "tags": ["editor", "recommended"],
+  "enabledByDefault": false,
+  "l10n": true
+}

@@ -230,5 +230,23 @@
       "editor-stage-left",
       "load-extensions"
     ]
+  },
+  {
+    "version": "1.12.1",
+    "added": [
+      "2d-color-picker",
+      "custom-block-shape",
+      "dango-rain",
+      "drag-drop"
+    ],
+    "modified": [
+      "60fps",
+      "better-featured-project",
+      "editor-theme3",
+      "folders",
+      "forum-quote-code-beautifier",
+      "full-signature",
+      "variable-manager"
+    ]
   }
 ]
