@@ -20,12 +20,21 @@ async function getAddonsForVersion(version) {
   };
   const addonIds = Object.keys(addonVersions);
   console.log(`Loading ${addonIds.length} addons`, addonVersions);
+  let failedCount = 0;
   const paths = addonIds.map((id) => `/addons/${addonVersions[id]}/${id}.json`);
-  const fetches = paths.map((path) => fetch(path).then((res) => res.json()));
+  const fetches = paths.map((path) => fetch(path)
+    .then((res) => res.json())
+    .catch((err) => {
+      console.error(`Error while accessing ${path}:`, err);
+      failedCount++;
+      return;
+    })
+  );
   const results = await Promise.all(fetches);
+  if (failedCount) console.warn(`${failedCount} addons not loaded`);
 
   let upgradeCount = 0;
-  for (const item of results) {
+  for (const item of results.filter((item) => typeof item === "object")) {
     // Some property names have changed between versions, update them if necessary
     if (version === "1.0.0" || version === "1.1.1") continue;
     if (item.options) {
@@ -38,7 +47,7 @@ async function getAddonsForVersion(version) {
       delete item.enabled_by_default;
       upgradeCount++;
     }
-  };
+  }
   if (upgradeCount) console.log(upgradeCount + " manifest properties upgraded");
 
   // Wrap each manifest in an object that the webpages can use
@@ -46,10 +55,12 @@ async function getAddonsForVersion(version) {
     addonId: addonIds[index],
     manifest: item,
   }));
+  // Exclude items that failed to load
+  const validManifestsObj = manifestsObj.filter(({ manifest }) => typeof manifest === "object");
 
-  console.log(manifestsObj.length + " addon manifests retrieved", manifestsObj);
+  console.log(validManifestsObj.length + " addon manifests retrieved", validManifestsObj);
   console.timeEnd(`Prepare addon data (v${version})`);
-  return manifestsObj;
+  return validManifestsObj;
 }
 
 function getDefaultValues(manifestsObj) {
