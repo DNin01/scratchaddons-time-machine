@@ -31,6 +31,10 @@ if (Object.keys(timeMachineAddonData).length === 0) {
 for (const item of timeMachineAddonData) {
   delete item.manifest.l10n;
   delete item.manifest.popup?.icon;
+  delete item.manifest.dynamicDisable;
+  delete item.manifest.dynamicEnable;
+  delete item.manifest.updateUserstylesOnSettingsChange;
+  delete item.manifest.injectAsStyleElt;
   // Re-add settings at the end of the object
   // (when get-addons.js updates property names they move to the end)
   const settings = item.manifest.settings;
@@ -48,6 +52,10 @@ window.scratchAddonsAddonData = await Promise.all(addonIds.map(async (id) => {
   delete res.persistentScripts;
   delete res.popup?.icon;
   delete res.customCssVariables;
+  delete res.dynamicDisable;
+  delete res.dynamicEnable;
+  delete res.updateUserstylesOnSettingsChange;
+  delete res.injectAsStyleElt;
   delete res.l10n;
   // Re-add settings at the end of the object
   const settings = res.settings;
