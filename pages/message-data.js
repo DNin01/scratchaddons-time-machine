@@ -29,6 +29,7 @@ export default function getMessages(version) {
     creditTo: "Credit to:",
     viewLicenses: "View library licenses",
     reset: "Reset",
+    default: "Default",
     presets: "Presets",
     scratchAddonsTheme: "Scratch Addons theme",
     scratchAddonsThemeDescription: "This allows you to switch between light and dark themes for this settings page, and the extension's popup.",

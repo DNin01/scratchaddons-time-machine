@@ -29,6 +29,7 @@ Time Machine includes the following versions of Scratch Addons:
 - 1.10.0
 - 1.11.1
 - 1.12.1
+- 1.13.0
 
 ## Usage
 

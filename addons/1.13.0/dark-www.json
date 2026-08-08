@@ -1,0 +1,29 @@
+{
+  "name": "Website dark mode",
+  "description": "Dark theme for the Scratch website, both for 2.0 and 3.0 pages. Multiple options by different authors available.",
+  "tags": ["community", "theme"],
+  "credits": [
+    {
+      "name": "Maximouse (Experimental Dark)",
+      "link": "https://github.com/mxmou/customize-scratch"
+    }
+  ],
+  "dynamicEnable": true,
+  "dynamicDisable": true,
+  "injectAsStyleElt": true,
+  "settings": [
+    {
+      "name": "Dark mode version",
+      "id": "selectedMode",
+      "type": "select",
+      "potentialValues": [
+        {
+          "id": "experimental-dark",
+          "name": "\"Experimental\" Dark"
+        }
+      ],
+      "default": "experimental-dark"
+    }
+  ],
+  "l10n": true
+}

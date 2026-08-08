@@ -248,5 +248,23 @@
       "full-signature",
       "variable-manager"
     ]
+  },
+  {
+    "version": "1.13.0",
+    "added": [
+      "blocks2image",
+      "custom-zoom",
+      "initialise-sprite-position"
+    ],
+    "modified": [
+      "cat-blocks",
+      "dango-rain",
+      "dark-www",
+      "editor-colored-context-menus",
+      "editor-dark-mode",
+      "editor-devtools",
+      "last-edit-tooltip",
+      "scratchr2"
+    ]
   }
 ]

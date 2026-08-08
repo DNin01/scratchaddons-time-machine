@@ -1,0 +1,35 @@
+{
+  "name": "Scratch 2.0 \u2192 3.0",
+  "description": "Makes Scratch 2.0-styled pages look like Scratch 3.0.",
+  "tags": ["community", "theme", "recommended"],
+  "credits": [
+    {
+      "name": "Maximouse",
+      "link": "https://github.com/mxmou/customize-scratch#scratch-30-look-for-old-parts-of-the-website"
+    }
+  ],
+  "dynamicEnable": true,
+  "dynamicDisable": true,
+  "injectAsStyleElt": true,
+  "settings": [
+    {
+      "id": "primaryColor",
+      "name": "Primary color",
+      "type": "color",
+      "default": "#4d97ff"
+    },
+    {
+      "id": "linkColor",
+      "name": "Link color",
+      "type": "color",
+      "default": "#4d97ff"
+    },
+    {
+      "id": "activeColor",
+      "name": "Link hover color",
+      "type": "color",
+      "default": "#4280d7"
+    }
+  ],
+  "l10n": true
+}

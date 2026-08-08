@@ -1,0 +1,13 @@
+{
+  "name": "Save blocks as image",
+  "description": "Right click the editor workspace to export blocks as SVG/PNG images.",
+  "tags": ["editor", "beta"],
+  "credits": [
+    {
+      "name": "summerscar",
+      "link": "https://github.com/summerscar"
+    }
+  ],
+  "enabledByDefault": false,
+  "l10n": true
+}
