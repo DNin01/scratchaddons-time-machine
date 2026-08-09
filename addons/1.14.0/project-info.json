@@ -1,0 +1,20 @@
+{
+  "name": "Sprite and script count",
+  "description": "Shows the number of sprites and scripts a project has.",
+  "tags": ["community", "projectPage"],
+  "credits": [
+    {
+      "name": "TheColaber",
+      "link": "https://scratch.mit.edu/users/TheColaber"
+    }
+  ],
+  "settings": [
+    {
+      "id": "editorCount",
+      "name": "Live block count in editor",
+      "type": "boolean",
+      "default": false
+    }
+  ],
+  "l10n": true
+}

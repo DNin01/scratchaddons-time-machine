@@ -1,0 +1,14 @@
+{
+  "name": "2D color picker",
+  "description": "Replaces saturation and brightness sliders with a 2D color picker. Hold Shift while dragging the cursor to change the values on a single axis.",
+  "tags": ["editor", "costumeEditor"],
+  "credits": [
+    {
+      "name": "Ucrash",
+      "link": "https://github.com/gducrash"
+    }
+  ],
+  "libraries": ["tinycolor2"],
+  "enabledByDefault": false,
+  "l10n": true
+}

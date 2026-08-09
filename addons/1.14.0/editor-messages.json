@@ -1,0 +1,12 @@
+{
+  "name": "Messages in editor",
+  "description": "Displays your message count in the editor.",
+  "credits": [
+    {
+      "name": "TheColaber"
+    }
+  ],
+  "tags": ["editor", "editorMenuBar", "recommended"],
+  "enabledByDefault": false,
+  "l10n": true
+}

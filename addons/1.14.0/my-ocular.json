@@ -1,0 +1,32 @@
+{
+  "name": "Show ocular.jeffalo.net statuses and post reactions",
+  "description": "Shows ocular statuses and reactions. Uses jeffalo.net to obtain data.",
+  "credits": [
+    {
+      "name": "Jeffalo"
+    }
+  ],
+  "settings": [
+    {
+      "name": "Show statuses on profiles",
+      "id": "profile",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "name": "Show statuses on forums",
+      "id": "discuss",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "name": "Show reaction buttons and \"View on ocular\" link",
+      "id": "reactions",
+      "type": "boolean",
+      "default": true
+    }
+  ],
+  "tags": ["forums", "profiles", "community"],
+  "enabledByDefault": false,
+  "l10n": true
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Mute project player",
+  "description": "Ctrl+Click the green flag to mute/unmute the project.",
+  "credits": [
+    {
+      "name": "TheColaber",
+      "link": "https://scratch.mit.edu/users/TheColaber"
+    }
+  ],
+  "tags": ["editor", "projectPlayer", "recommended"],
+  "l10n": true
+}

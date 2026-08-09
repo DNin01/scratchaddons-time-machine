@@ -1,0 +1,13 @@
+{
+  "name": "Semicolon glitch",
+  "description": "Adds the semicolon glitch back to Scratch.",
+  "credits": [
+    {
+      "name": "GrahamSH"
+    }
+  ],
+
+  "tags": ["community", "easterEgg"],
+  "enabledByDefault": false,
+  "l10n": true
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Display stage on left side",
+  "description": "Moves the stage to the left side of the editor.",
+  "credits": [
+    {
+      "name": "NitroCipher/ZenithRogue"
+    }
+  ],
+  "dynamicEnable": true,
+  "dynamicDisable": true,
+  "injectAsStyleElt": true,
+  "tags": ["editor", "theme", "recommended"],
+  "enabledByDefault": false,
+  "l10n": true
+}

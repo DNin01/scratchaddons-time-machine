@@ -1,0 +1,20 @@
+{
+  "name": "Remix tree button on project pages",
+  "description": "Brings back the remix tree button to project pages.",
+  "tags": ["community", "recommended", "projectPage"],
+  "credits": [
+    {
+      "name": "Ucrash",
+      "link": "https://github.com/gducrash"
+    }
+  ],
+  "settings": [
+    {
+      "name": "Button Color",
+      "id": "buttonColor",
+      "type": "color",
+      "default": "#4d97ff"
+    }
+  ],
+  "l10n": true
+}

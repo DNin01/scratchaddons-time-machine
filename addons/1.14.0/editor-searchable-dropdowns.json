@@ -1,0 +1,14 @@
+{
+  "name": "Searchable dropdowns",
+  "description": "Allows you to search dropdowns in the Scratch editor.",
+  "credits": [
+    {
+      "name": "GarboMuffin"
+    }
+  ],
+  "dynamicEnable": true,
+  "dynamicDisable": true,
+  "tags": ["editor", "codeEditor", "recommended"],
+  "enabledByDefault": false,
+  "l10n": true
+}

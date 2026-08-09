@@ -1,4 +1,5 @@
-export default function getMessages(version) {
+export default function getMessages(versionStr) {
+  const minor = versionStr.split(".")[1];
   return {
     extensionName: "Scratch Addons",
     messaging: "Messaging",
@@ -7,6 +8,8 @@ export default function getMessages(version) {
     changelog: "View changelog",
     recommended: "Recommended",
     beta: "Beta",
+    danger: "Dangerous",
+    dangerWarning: "Are you sure you want to enable the \"$1\" addon?",
     forums: "Forums",
     forEditor: "For editor",
     forWebsite: "For website",
@@ -16,8 +19,17 @@ export default function getMessages(version) {
     settings: "Settings",
     all: "All",
     editorFeatures: "Scratch Editor Features",
+    costumeEditorFeatures: "Costume Editor",
+    codeEditorFeatures: "Code Editor",
     websiteFeatures: "Scratch Website Features",
+    profilesFeatures: "Profiles",
+    projectPlayerFeatures: "Project Player",
+    projectPageFeatures: "Project Pages",
+    others: "Others",
     themes: "Themes",
+    editorThemes: "Editor Themes",
+    websiteThemes: "Website Themes",
+    popupFeatures: "Extension Popup Features",
     popupFeatures: "Extension Popup Features",
     theme: "Theme:",
     credits: "Credits",
@@ -40,11 +52,13 @@ export default function getMessages(version) {
     licensesForLibrary: "Licenses for library $1",
     libraryCredits: "View licenses of used libraries",
     recommendedTooltip: "This is recommended by Scratch Addons. Try it out!",
+    dangerTooltip: "Use with caution. Make sure to understand what this addon does before enabling.",
     betaTooltip: "Keep in mind that this addon might have bugs.",
     forumsTooltip: "This addon applies to Scratch's Discussion Forums.",
     search: "Search",
     translate: "Help Translate",
     new: "New!",
+    enabled: "Enabled",
     exportAndImportSettings: "Export and Import Settings",
     exportAndImportSettingsDescription: "Setting importation is not supported in Scratch Addons Time Machine.",
     export: "Export Settings",
@@ -54,9 +68,17 @@ export default function getMessages(version) {
     importFailed: "The settings file is invalid. Please try again.",
     confirmImport: "Confirm",
     quickSettings: "Addons",
-    runningOnThisPage: "Addons currently running on this tab:",
+    runningOnThisPage: minor > 13
+      ? "Addons on this tab"
+      : "Addons currently running on this tab:",
+    recentlyUsed: "Recently used",
     settingsPagePermission: "To enable the \"$1\" addon, go to the full screen settings page.",
     openFullSettings: "Open full screen settings",
     skipOpenFullSettings: "Cancel",
+    exploreAllAddons: "Explore all $1 addons:",
+    captureCommentError: "Message added by Scratch Addons: it appears that your comment doesn't follow $1, which asks Scratchers not to advertise or name browser extensions. This comment wasn't posted because it will probably result in your account getting muted from commenting for 5 minutes.",
+    captureCommentPolicy: "Scratch Community's Browser Extension/Userscript Policy",
+    captureCommentPostAnyway: "Post anyway",
+    captureCommentConfirm: "Are you sure you want to post this comment? Scratch will probably mute your account from commenting anywhere on Scratch for at least 5 minutes.",
   }
 }

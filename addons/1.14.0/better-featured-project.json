@@ -1,0 +1,22 @@
+{
+  "name": "Profile page banner",
+  "description": "Makes the featured project on any user's profile page into a nice-looking banner.",
+  "credits": [
+    {
+      "name": "Ezlambry",
+      "link": "https://ezlambry.github.io/"
+    }
+  ],
+  "settings": [
+    {
+      "id": "blur",
+      "name": "Banner blur",
+      "type": "integer",
+      "min": 0,
+      "max": 5,
+      "default": 0
+    }
+  ],
+  "tags": ["community", "recommended", "profiles"],
+  "l10n": true
+}

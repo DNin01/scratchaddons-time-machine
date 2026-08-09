@@ -1,0 +1,15 @@
+{
+  "name": "Colored context menus",
+  "description": "Makes the editor context menus colorful when right-clicking a block.",
+  "credits": [
+    {
+      "name": "GarboMuffin"
+    }
+  ],
+  "dynamicEnable": true,
+  "dynamicDisable": true,
+  "injectAsStyleElt": true,
+  "tags": ["editor", "codeEditor", "theme"],
+  "enabledByDefault": false,
+  "l10n": true
+}
