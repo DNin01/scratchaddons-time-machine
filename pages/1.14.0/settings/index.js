@@ -866,7 +866,7 @@ const vue = (window.vue = new Vue({
     },
     openFullSettings() {
       window.open(
-        `${chrome.runtime.getURL("webpages/settings/index.html")}#addon-${
+        `${chrome.runtime.getURL("/ui/settings-pages.html")}#addon-${
           this.addonToEnable && this.addonToEnable._addonId
         }`
       );

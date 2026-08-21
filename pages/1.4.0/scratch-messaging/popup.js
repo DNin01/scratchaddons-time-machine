@@ -300,7 +300,7 @@ import { escapeHTML } from "/libraries/scratch-addons/autoescaper.js";
       },
       settingsLink() {
         return l10n.escaped("scratch-messaging/disabled", {
-          settings: `<a href="/webpages/settings/index.html" target="_blank">${l10n.escaped(
+          settings: `<a href="/ui/settings-pages.html" target="_blank">${l10n.escaped(
             "scratch-messaging/settings"
           )}</a>`,
         });
